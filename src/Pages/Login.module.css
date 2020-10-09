@@ -1,0 +1,23 @@
+.cont {
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightCol {
+  height: 600px;
+}
+
+.leftCol {
+  border-right: 2px solid black;
+  height: 600px;
+}
+
+.button {
+  margin-top: 200px;
+}
+
+.formCheck {
+  margin-top: 200px;
+  /* width: 50%; */
+}
