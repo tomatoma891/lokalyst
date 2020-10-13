@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
 
 import api from "../../api/axiosInstance/graderAPI";
 
@@ -15,9 +14,9 @@ const useStyles = makeStyles({
     minWidth: 275,
   },
   bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
   },
   title: {
     fontSize: 14,
@@ -27,10 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-
-
 const GoogleGrade = () => {
-
   const [locations, setLocations] = useState([]);
   const [currentLocation, setCurrentLocation] = useState({});
   const [allLocationData, setAllLocationData] = useState({});
@@ -104,46 +100,42 @@ const GoogleGrade = () => {
   return (
     <div>
       <Card className={classes.root}>
-      <CardContent>
-      {locations.length &&
-        locations.map((el) => (
-          <p value={el} onClick={() => dataHandler(el)}>
-            {el.locationName}
-          </p>
-        ))}
-        
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-    <Card className={classes.root}>
-      <CardContent>
-      {currentLocation.locationName !== undefined && (
-        <div>
-          {/* <p>{currentLocation.locationName}</p>
+        <CardContent>
+          {locations.length &&
+            locations.map((el) => (
+              <p value={el} onClick={() => dataHandler(el)}>
+                {el.locationName}
+              </p>
+            ))}
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+      <Card className={classes.root}>
+        <CardContent>
+          {currentLocation.locationName !== undefined && (
+            <div>
+              {/* <p>{currentLocation.locationName}</p>
           <p>{currentLocation.address.locality}</p> */}
-        </div>
-      )}
-      
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+            </div>
+          )}
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
 
-    <Card className={classes.root}>
-      <CardContent>
-      {allLocationData.presence !== undefined && (
-        <VisualizationContainer allLocationData={allLocationData} />
-      )}
-      
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-
+      <Card className={classes.root}>
+        <CardContent>
+          {allLocationData.presence !== undefined && (
+            <VisualizationContainer allLocationData={allLocationData} />
+          )}
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
     </div>
   );
 };

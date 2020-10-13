@@ -42,3 +42,8 @@
 .calendy {
   margin-top: 150px;
 }
+
+.calender {
+  margin-top: 75px;
+  cursor: pointer;
+}

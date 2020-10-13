@@ -9,25 +9,20 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import GoogleGrade from "./Components/GoogleGrade/GoogleGrade";
 import NavBar from "./Components/NavBar/NavBar";
-
-
-
+import Calendar from "./Components/Calendar/Calendar";
 
 // Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
-
 const App = () => {
   return (
-    <Router> 
+    <Router>
       <Route path="/login" component={Login}></Route>
-      <NavBar/>
-      <Route exact path ="/googlegrade">
-< GoogleGrade/>
+      <NavBar />
+      <Route exact path="/googlegrade">
+        <GoogleGrade />
       </Route>
-
+      <Route exact path="/calendar" component={Calendar}></Route>
     </Router>
   );
 };
